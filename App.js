@@ -10,6 +10,7 @@ const fetchFonts =() =>{
     'openSans-bold': require('./assets/fonts/OpenSans-Bold.ttf'),
   });
 }
+
 export default function App() {
   const [fontLoaded, setFontLoaded ] = setState(false)
 
