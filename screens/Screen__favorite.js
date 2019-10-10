@@ -1,15 +1,15 @@
 import React from 'react'
-import { View, Text, StylesSheets } from 'react-native'
+import { View, Text, StyleSheet } from 'react-native'
 
 import globalStyles from '../components/globalStyles'
 
-const Screen__favorite = props => {
+const Screen__Favorite = props => {
     return (
     <View style={styles.categoryWrapper}>
         <Text> Favorite</Text>
     </View>);
 };
-const styles = StylesSheets.create({
+const styles = StyleSheet.create({
 
 });
-export default Screen__favorite;
+export default Screen__Favorite;

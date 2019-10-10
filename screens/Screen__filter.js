@@ -1,15 +1,15 @@
 import React from 'react'
-import { View, Text, StylesSheets } from 'react-native'
+import { View, Text, StyleSheet } from 'react-native'
 
 import globalStyles from '../components/globalStyles'
 
-const Screen__filter = props => {
+const Screen__Filter = props => {
     return (
     <View style={styles.categoryWrapper}>
         <Text> filter</Text>
     </View>);
 };
-const styles = StylesSheets.create({
+const styles = StyleSheet.create({
 
 });
-export default Screen__filter;
+export default Screen__Filter;
