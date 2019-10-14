@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+import { View } from "react-native";
 import * as Font from 'expo-font';
 import { AppLoading } from 'expo';
 
 import NavigatorMeal from './navigation/navigator_meals'
-
+import globalStyles from "./components/globalStyles";
 
 
 const fetchFonts = () => {
@@ -24,6 +25,8 @@ export default function App() {
       />
     );
   }
-
-  return <NavigatorMeal />;
+  return (
+      <NavigatorMeal style={globalStyles.container} />
+    )
+  
 }

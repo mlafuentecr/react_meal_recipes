@@ -3,10 +3,15 @@ import { View, Text, StyleSheet, Button } from 'react-native'
 
 import globalStyles from '../components/globalStyles'
 
+
 const Screen__CategoryMeals = props => {
+  
+  console.log(props.navigation.state.routeName);
+  
     return (
     <View style={globalStyles.wrapper}>
         <Text> mealsCategory</Text>
+       
         <Button
         title="Go to Details"
         onPress={() => {
@@ -24,6 +29,18 @@ const Screen__CategoryMeals = props => {
       }} />
     </View>);
 };
+
+Screen__CategoryMeals.navigationOptions = {
+  headerTitle: 'Meal Categories',
+  headerStyle: {
+    backgroundColor: globalStyles.primary,
+    color: 'white'
+  }
+};
+
+
+
+
 const styles = StyleSheet.create({
 
 });
