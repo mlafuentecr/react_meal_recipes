@@ -5,6 +5,8 @@ import globalStyles from '../components/globalStyles'
 
 const Screen__MealDetail = props => {
    
+
+    
     return (
     <View style={styles.categoryWrapper}>
         <Text> detailMeal</Text>
