@@ -8,8 +8,8 @@ const Screen__MealDetail = props => {
 
     
     return (
-    <View style={styles.categoryWrapper}>
-        <Text> detailMeal</Text>
+    <View style={globalStyles.categoryWrapper}>
+        <Text> detailMeal </Text>
     </View>);
 };
 const styles = StyleSheet.create({

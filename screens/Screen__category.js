@@ -1,22 +1,26 @@
 import React from "react";
-import { View, Text, StyleSheet, Button, FlatList } from "react-native";
+import { View, Text, StyleSheet, Platform, FlatList } from "react-native";
 import { CATEGORIES } from "../myData/data";
 import globalStyles from "../components/globalStyles";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
 const Screen__Category = props => {
-  const { navigate } = props.navigation;
-  
 
   const renderGridItem = itemData => {
+
+    const categoryTitle = itemData.item.title;
+
     return (
       <TouchableOpacity
         onPress={() => {
-          navigate("CategoryMeals");
+          props.navigation.navigate("CategoryMeals", {
+            itemTitle: categoryTitle,
+            otherParam: "anything you want here"
+          });
         }}
       >
         <View style={styles.gridItem}>
-          <Text>{itemData.item.title} xxx</Text>
+          <Text>{categoryTitle}</Text>
         </View>
       </TouchableOpacity>
     );
@@ -33,15 +37,11 @@ const Screen__Category = props => {
     />
   );
 };
- 
+
 Screen__Category.navigationOptions = {
   headerTitle: " Categories",
-  headerBackTitle: 'A much too long text for back button from B to A',
+  headerBackTitle: "A much too long text for back button from B to A",
   headerTruncatedBackTitle: `to A`,
-  headerStyle: {
-    backgroundColor: globalStyles.primary,
-    color: "white"
-  }
 };
 
 const styles = StyleSheet.create({
