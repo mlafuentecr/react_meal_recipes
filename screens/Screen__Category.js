@@ -15,7 +15,7 @@ const Screen__Category = props => {
         onPress={() => {
           props.navigation.navigate("CategoryMeals", {
             itemTitle: categoryTitle,
-            otherParam: "anything you want here "
+            otherParam: "anything you want here x"
           });
         }}
       >
