@@ -14,7 +14,7 @@ const Screen__CategoryMeals = props => {
       <Text> mealsCategory1 </Text>
 
       <Button
-        title="Go to Details"
+        title="Go to Details "
         onPress={() => {
           //Also I can use navigate or push
           // puede cargar la misma pagina
