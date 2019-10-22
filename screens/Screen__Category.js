@@ -19,8 +19,8 @@ const Screen__Category = props => {
           });
         }}
       >
-        <View style={styles.gridItem}>
-          <Text>{categoryTitle}</Text>
+        <View style={{...styles.gridItem, ...{ backgroundColor: itemData.item.color}}}>
+          <Text style={globalStyles.title} numberOfLines={2}>{categoryTitle}</Text>
         </View>
       </TouchableOpacity>
     );
@@ -29,7 +29,7 @@ const Screen__Category = props => {
   //console.log(props);
   return (
     <FlatList
-      style={globalStyles.container}
+      style={globalStyles.container }
       keyExtractor={(item, index) => item.id}
       data={CATEGORIES}
       renderItem={renderGridItem}
@@ -51,9 +51,10 @@ const styles = StyleSheet.create({
     minHeight: 110,
     minWidth: "40%",
     backgroundColor: "white",
-    justifyContent: "center",
-    alignItems: "center",
-    textAlign: "center"
+    justifyContent: "flex-end",
+    alignItems: "flex-end",
+    padding:15,
+    borderRadius: 10
   }
 });
 export default Screen__Category;

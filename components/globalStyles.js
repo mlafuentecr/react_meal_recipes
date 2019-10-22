@@ -38,4 +38,8 @@ export default {
     hide:{
         display: 'none'
       },
+      title: {
+        fontFamily: 'open-sans-bold',
+        fontSize: 20
+      }
   } 
