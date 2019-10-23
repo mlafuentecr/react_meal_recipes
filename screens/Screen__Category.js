@@ -4,12 +4,18 @@ import { CATEGORIES } from "../myData/data";
 import globalStyles from "../components/globalStyles";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
+
 const Screen__Category = props => {
 
+ 
+  
   const renderGridItem = itemData => {
 
-    const categoryTitle = itemData.item.title;
+  
 
+    const categoryTitle = itemData.item.title;
+ 
+    
     return (
       <TouchableOpacity
         onPress={() => {
