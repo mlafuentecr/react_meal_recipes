@@ -14,14 +14,14 @@ const Screen__Category = props => {
   
 
     const categoryTitle = itemData.item.title;
- 
+   
     
     return (
       <TouchableOpacity
         onPress={() => {
           props.navigation.navigate("CategoryMeals", {
             itemTitle: categoryTitle,
-            otherParam: "anything you want here"
+            categoryId: itemData.item.id,
           });
         }}
       >

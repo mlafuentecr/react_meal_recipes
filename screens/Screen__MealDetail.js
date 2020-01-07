@@ -1,18 +1,18 @@
 import React from 'react'
 import { View, Text, StyleSheet, FlatList} from 'react-native'
 
-import { MEALS } from "../myData/data";
+
 import globalStyles from '../components/globalStyles'
 
 
 const Screen__MealDetail = props => {
    
-    const { navigate} = props.navigation;
+   
     
     //get defaulth this.props.navigation.getParam(paramName, defaultValue)
     // const catId =  props.navigation.getParam('categoryId');
-    console.log(navigate);
-    const displayMeals = MEALS.filter(meal => meal.categoryId.indexOf(catId) >= 0);
+    console.log(props.navigation.getParam('categoryId', 'NO-ID'));
+    //const displayMeals = MEALS.filter(meal => meal.categoryId.indexOf(catId) >= 0);
  
     const renderMealTitle = props =>{
         return (
@@ -26,7 +26,7 @@ const Screen__MealDetail = props => {
     
     return (
     <View style={globalStyles.categoryWrapper}>
-         <FlatList data={displayMeals}  keyExtractor={(item) => item.id} renderItem={'xxx'} />
+         {/* <FlatList data={displayMeals}  keyExtractor={(item) => item.id} renderItem={'xxx'} /> */}
     </View>);
 };
 const styles = StyleSheet.create({

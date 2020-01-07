@@ -2,12 +2,19 @@ import React from "react";
 import { View, Text, StyleSheet, Button, Platform} from "react-native";
 
 import globalStyles from "../components/globalStyles";
+import { MEALS } from "../myData/data";
+
 
 const Screen__CategoryMeals = props => {
-  // console.log(props.navigation.state.routeName);
-  // console.log(navigation);
-
-  const { navigation } = props;
+  const catId = props.navigation.getParam('categoryId', 'dont have ID');
+  console.log(catId);
+  // const displayedMeals = MEALS.filter(
+  //   meal => meal.categoryIds.indexOf(catId) >= 0
+  // );
+ 
+  //where categoryIds come from
+ 
+ 
 
   return (
     <View style={globalStyles.categoryWrapper}>
