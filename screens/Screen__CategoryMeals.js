@@ -7,11 +7,12 @@ const Screen__CategoryMeals = props => {
   // console.log(props.navigation.state.routeName);
   // console.log(navigation);
 
-  const { navigation } = props;
+  //console.log(props.navigation.state.params.itemTitle);
 
+  const titleCat = props.navigation.state.params.itemTitle;
   return (
     <View style={globalStyles.categoryWrapper}>
-      <Text> mealsCategory1 </Text>
+      <Text> meals Category title </Text>
 
       <Button
         title="Go to Details "
@@ -36,9 +37,15 @@ const Screen__CategoryMeals = props => {
 Screen__CategoryMeals.navigationOptions = ({ navigation }) => {
   //el segundo parametro es si no encuentra el primero
   const headerTitle = navigation.getParam("itemTitle", "Meal Categories");
+ 
+ 
+ // console.log(headerTitle);
 
   return {
-    headerTitle: headerTitle,
+    headerTitle: "Detailx",
+    //headerTitle: headerTitle,
+ 
+
   }
 };
 
