@@ -6,6 +6,7 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 
 const Screen__Category = props => {
 
+  
   const renderGridItem = itemData => {
 
     const categoryTitle = itemData.item.title;
@@ -16,7 +17,7 @@ const Screen__Category = props => {
         onPress={() => {
           props.navigation.navigate("CategoryMeals", {
             itemTitle: categoryTitle,
-            otherParam: "anything you want here"
+            catId : "xxxx",
           });
         }}
       >
@@ -26,7 +27,7 @@ const Screen__Category = props => {
       </TouchableOpacity>
     );
   };
-
+ 
   //console.log(props);
   return (
     <FlatList

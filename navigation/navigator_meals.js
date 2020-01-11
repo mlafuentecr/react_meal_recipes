@@ -8,6 +8,8 @@ import globalStyles from '../components/globalStyles';
 
 
 const NavigatorMeal = createStackNavigator({
+ 
+ 
   Categories: {
 
     screen: ScreenCategory,
@@ -29,9 +31,9 @@ const NavigatorMeal = createStackNavigator({
 },
 
 {
-
+ 
   defaultNavigationOptions:{
-    headerTitle: 'XXDetailXX',
+    //  headerTitle: 'xx',
     headerStyle: {
       backgroundColor:
         Platform.OS === "android" ? globalStyles.macColor : globalStyles.primary
@@ -42,4 +44,7 @@ const NavigatorMeal = createStackNavigator({
 }
 
 );
+
+
+
 export default createAppContainer(NavigatorMeal);

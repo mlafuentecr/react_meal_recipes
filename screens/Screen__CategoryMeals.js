@@ -4,12 +4,14 @@ import { View, Text, StyleSheet, Button, Platform} from "react-native";
 import globalStyles from "../components/globalStyles";
 
 const Screen__CategoryMeals = props => {
-  // console.log(props.navigation.state.routeName);
-  // console.log(navigation);
+ 
+  //console.log(headerTitle);
 
-  //console.log(props.navigation.state.params.itemTitle);
+ 
 
   const titleCat = props.navigation.state.params.itemTitle;
+ 
+
   return (
     <View style={globalStyles.categoryWrapper}>
       <Text> meals Category title </Text>
@@ -19,7 +21,9 @@ const Screen__CategoryMeals = props => {
         onPress={() => {
           //Also I can use navigate or push
           // puede cargar la misma pagina
-          props.navigation.push("MealDetails");
+          props.navigation.push("MealDetails", {
+            itemTitle : titleCat,
+          });
         }}
       />
 
@@ -36,15 +40,13 @@ const Screen__CategoryMeals = props => {
 
 Screen__CategoryMeals.navigationOptions = ({ navigation }) => {
   //el segundo parametro es si no encuentra el primero
-  const headerTitle = navigation.getParam("itemTitle", "Meal Categories");
  
- 
- // console.log(headerTitle);
+  const choosenTitle = navigation.state.params.itemTitle;
 
   return {
-    headerTitle: "Detailx",
+    
+    headerTitle: "Detail category meal "+ choosenTitle,
     //headerTitle: headerTitle,
- 
 
   }
 };
