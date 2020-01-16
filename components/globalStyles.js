@@ -15,7 +15,8 @@ export default {
       textAlign: 'center',
       padding: 10,
       flexWrap: 'wrap',
-      backgroundColor: '#ee7e83'
+      backgroundColor: '#ee7e83',   
+      with: '100%'
     },
     wrapper:{
       flex: 1,
@@ -24,6 +25,7 @@ export default {
       textAlign: 'center',
       padding: 10,
       flexWrap: 'wrap',
+      with: '100%'
     },
     categoryWrapper:{
       flex: 1,
@@ -32,10 +34,22 @@ export default {
       textAlign: 'center',
       padding: 10,
       flexWrap: 'wrap',
+      with: '100%'
     },
     
     /* Others */
     hide:{
         display: 'none'
+      },
+      containerMeal :{
+        flex: 1,
+        textAlign: 'center',
+        padding: 10,
+        flexWrap: 'wrap',
+        backgroundColor: 'red',
+        with: '100%'
+      },
+      mealRow:{
+        flexDirection: 'row'
       },
   } 

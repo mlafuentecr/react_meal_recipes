@@ -1,15 +1,18 @@
 import React from "react";
 import { View, Text, StyleSheet, Platform, FlatList } from "react-native";
-import { CATEGORIES } from "../myData/data";
+import { CATEGORIES, MEALS} from "../myData/data";
 import globalStyles from "../components/globalStyles";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
 const Screen__Category = props => {
 
+console.log(props);
   
   const renderGridItem = itemData => {
 
-    const categoryTitle = itemData.item.title;
+    const categoryTitle   = itemData.item.title;
+    const catId           = itemData.item.id;
+    const displayMeals    = MEALS.filter( meals => meals.categoryIds.indexOf(catId) >= 0);
     
     return (
       <TouchableOpacity
@@ -17,12 +20,13 @@ const Screen__Category = props => {
         onPress={() => {
           props.navigation.navigate("CategoryMeals", {
             itemTitle: categoryTitle,
-            catId : "xxxx",
+            catId : catId,
+            displayMeals: displayMeals
           });
         }}
       >
         <View categoryTitle={categoryTitle} >
-          <Text>{categoryTitle} </Text>
+          <Text> {categoryTitle} {catId}  </Text>
         </View>
       </TouchableOpacity>
     );
