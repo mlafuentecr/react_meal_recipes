@@ -42,23 +42,23 @@ export default {
       wraperMeal :{
         flex: 1,
         textAlign: 'center',
-        backgroundColor: 'white',   
+        backgroundColor: 'white',  
+        flexDirection: "column",
       },
-      wrapFlatlist :{
-        flex: 0.9,
-        textAlign: 'center',
-        padding: 10,
-        margin: 30,
-        flexWrap: 'wrap',
-        backgroundColor: 'red',   
+      wraperFlat :{
+        flex: 0.8,
+        backgroundColor: 'green', 
+        flexDirection: "column", 
       },
+    
       mealRow:{
         flex: 1,
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'stretch',
-        padding: 10,
-        backgroundColor: 'gray', 
-      
+        backgroundColor: '#f9c2ff',
+        padding: 20,
+        marginVertical: 8,
+        marginHorizontal: 16,
+        flexDirection: "row",
       },
+    
+ 
   }  

@@ -16,7 +16,7 @@ const Screen__CategoryMeals = props => {
   const remderMealItem = itemData => {
     return(  
       <TouchableOpacity onPress={props.onSelectMeal} >
-      <View style={globalStyles.mealRow}>
+      <View style={globalStyles.mealRow} >
         <View >
           <Text> {itemData.item.title} </Text>
         </View>
@@ -28,18 +28,23 @@ const Screen__CategoryMeals = props => {
 
 
   return (
-    <View  style={globalStyles.wraperMeal}> 
-      <Text> meals Category title xxxxxfff </Text>
+    <View style={globalStyles.wraperMeal}>
+
+    <View  style={globalStyles.wraperFlat}> 
       <FlatList
-      style={globalStyles.wrapFlatlist}
       keyExtractor={(item, index) => item.id}
       data={displayMeals}
       renderItem={remderMealItem}
       numColumns={2}
     />
+    </View>
 
+    <View style={{ flexDirection: "row",  justifyContent: 'space-around',
+      alignItems: 'center',
+      textAlign: 'center',}}>
       <Button
         title="Go to Details "
+        style={{ flex: 1, margin: 50, }}
         onPress={() => {
           //Also I can use navigate or push
           // puede cargar la misma pagina
@@ -52,10 +57,12 @@ const Screen__CategoryMeals = props => {
       {/* goBack or pop or popToTop para ir al padre*/}
       <Button
         title="Go to Back"
+        style={{ flex: 1, margin: 10,}}
         onPress={() => {
           props.navigation.goBack();
         }}
       />
+    </View>
     </View>
   );
 };
