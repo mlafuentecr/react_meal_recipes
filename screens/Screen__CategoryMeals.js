@@ -15,15 +15,12 @@ const Screen__CategoryMeals = props => {
   
   const remderMealItem = itemData => {
     return(  
-      <TouchableOpacity onPress={props.onSelectMeal}>
-      <View>
-        <View style={globalStyles.mealRow}>
+      <TouchableOpacity onPress={props.onSelectMeal} >
+      <View style={globalStyles.mealRow}>
+        <View >
           <Text> {itemData.item.title} </Text>
         </View>
-
-        <View style={globalStyles.mealRow}>
-          <Text> {itemData.item.title} </Text>
-        </View>
+    
     </View>
     </TouchableOpacity>
     );
@@ -31,10 +28,10 @@ const Screen__CategoryMeals = props => {
 
 
   return (
-    <View style={globalStyles.categoryWrapper}>
+    <View  style={globalStyles.wraperMeal}> 
       <Text> meals Category title xxxxxfff </Text>
       <FlatList
-      style={globalStyles.containerMeal}
+      style={globalStyles.wrapFlatlist}
       keyExtractor={(item, index) => item.id}
       data={displayMeals}
       renderItem={remderMealItem}
