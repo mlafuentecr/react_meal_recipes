@@ -35,7 +35,6 @@ console.log(props);
   //console.log(props);
   return (
     <FlatList
-      style={globalStyles.container}
       keyExtractor={(item, index) => item.id}
       data={CATEGORIES}
       renderItem={renderGridItem}

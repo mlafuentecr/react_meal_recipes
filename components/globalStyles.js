@@ -40,25 +40,18 @@ export default {
         display: 'none'
       },
       wraperMeal :{
-        flex: 1,
-        textAlign: 'center',
-        backgroundColor: 'white',  
-        flexDirection: "column",
       },
-      wraperFlat :{
-        flex: 0.8,
-        backgroundColor: 'green', 
-        flexDirection: "column", 
-      },
-    
       mealRow:{
-        flex: 1,
-        backgroundColor: '#f9c2ff',
-        padding: 20,
-        marginVertical: 8,
-        marginHorizontal: 16,
-        flexDirection: "row",
+        margin: 10,
+        backgroundColor: 'red',
+        justifyContent: 'center',
+        flexDirection: 'row',
       },
-    
+      detailTitle :{
+        heigh: 200  ,
+        width: '100%',
+        backgroundColor: 'purple',
+      },
+   
  
   }  

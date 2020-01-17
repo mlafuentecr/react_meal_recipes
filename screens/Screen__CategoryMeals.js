@@ -15,29 +15,29 @@ const Screen__CategoryMeals = props => {
   
   const remderMealItem = itemData => {
     return(  
-      <TouchableOpacity onPress={props.onSelectMeal} >
+      
       <View style={globalStyles.mealRow} >
-        <View >
-          <Text> {itemData.item.title} </Text>
-        </View>
-    
+        <TouchableOpacity onPress={props.onSelectMeal}  >
+          <View style={globalStyles.detailTitle} ><Text> {itemData.item.title} </Text></View>
+          <View><Text> {itemData.item.duration}m </Text></View>
+        </TouchableOpacity>
     </View>
-    </TouchableOpacity>
+   
     );
   }
 
 
   return (
     <View style={globalStyles.wraperMeal}>
-
-    <View  style={globalStyles.wraperFlat}> 
-      <FlatList
+   
+ 
+    <FlatList
       keyExtractor={(item, index) => item.id}
       data={displayMeals}
       renderItem={remderMealItem}
-      numColumns={2}
+      numColumns={1}
     />
-    </View>
+ 
 
     <View style={{ flexDirection: "row",  justifyContent: 'space-around',
       alignItems: 'center',
