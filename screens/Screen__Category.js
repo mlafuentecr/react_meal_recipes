@@ -6,7 +6,7 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 
 const Screen__Category = props => {
 
-console.log(props);
+//console.log(props);
   
   const renderGridItem = itemData => {
 

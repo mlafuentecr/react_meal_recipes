@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, Button, Platform, FlatList} from "react-native";
+import { View, Text, StyleSheet, Button, Platform, FlatList, ImageBackground} from "react-native";
 
 import globalStyles from "../components/globalStyles";
 import { TouchableOpacity } from "react-native-gesture-handler";
@@ -12,14 +12,41 @@ const Screen__CategoryMeals = props => {
 
   const titleCat        = props.navigation.state.params.itemTitle;
   const displayMeals    = props.navigation.state.params.displayMeals;
+  const catId           = props.navigation.state.params.id;
   
+  _mealSelect=()=>{
+   props.navigation.navigate({routeName: "MealDetails", params:{
+    itemTitle: titleCat,
+    catId : catId,
+    displayMeals: displayMeals
+  }});
+  }
+
+
   const remderMealItem = itemData => {
     return(  
       
       <View style={globalStyles.mealRow} >
-        <TouchableOpacity onPress={props.onSelectMeal}  >
-          <View style={globalStyles.detailTitle} ><Text> {itemData.item.title} </Text></View>
-          <View><Text> {itemData.item.duration}m </Text></View>
+        <TouchableOpacity  onPress={() => {
+          props.navigation.navigate("MealDetails", {
+          itemTitle: itemData.item.title,
+          catId : catId,
+          displayMeals: displayMeals
+          });
+        }}
+        style={globalStyles.mealWrapper} >
+
+          <View style={globalStyles.detailTitleWrap}>
+            <ImageBackground source={{uri: itemData.item.imageUrl}}  style={globalStyles.detailImg} >
+            </ImageBackground>
+          </View>
+
+          <View style={globalStyles.details}>
+          <Text style={globalStyles.detailTitle} numberOfLines={1}> {itemData.item.title} </Text>
+            <Text style={globalStyles.p5}> {itemData.item.duration}m </Text>
+            <Text style={globalStyles.p5}> {itemData.item.complexity}</Text>
+            <Text style={globalStyles.p5}> {itemData.item.affordability} </Text>
+          </View>
         </TouchableOpacity>
     </View>
    
@@ -74,7 +101,7 @@ Screen__CategoryMeals.navigationOptions = ({ navigation }) => {
 
   return {
     
-    headerTitle: "Detail category meal "+ choosenTitle,
+    headerTitle: choosenTitle,
     //headerTitle: headerTitle,
 
   }

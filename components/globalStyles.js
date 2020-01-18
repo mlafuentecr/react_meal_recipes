@@ -39,19 +39,39 @@ export default {
     hide:{
         display: 'none'
       },
-      wraperMeal :{
+      p5 : {
+        padding: 5,
+        paddingBottom: 15
       },
       mealRow:{
-        margin: 10,
-        backgroundColor: 'red',
-        justifyContent: 'center',
-        flexDirection: 'row',
+        width: '100%',
+      },
+      mealWrapper :{
+        width: '100%',
+       
+      },
+      detailTitleWrap:{
+        width: '100%',
+        height: 180,
+        backgroundColor: 'blue',  
       },
       detailTitle :{
-        heigh: 200  ,
         width: '100%',
-        backgroundColor: 'purple',
+        backgroundColor: '#0000008f',
+        justifyContent: 'center',
+        alignItems: 'center',
+        textAlign: 'center',
+        color: 'white',
+       padding: 5
       },
-   
+      details:{
+        flexWrap: 'wrap',
+       justifyContent: 'space-evenly',
+      flexDirection: 'row',
+      },
+      detailImg:{
+        height: '100%',
+        width: '100%',
+       },
  
   }  
