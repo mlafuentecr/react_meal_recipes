@@ -1,8 +1,8 @@
 export default {
     /* Colors */
-    primary: '#a7353a',
+    primary: 'purple',
     macColor: 'purple',
-    secondLight: '#ee7e83',
+    secondLight: '#B58EBB',
     background:'#a7353a',
     backgroundDarker:'#cdcdcd',
     btnConfirm:'#2296f3',
@@ -32,7 +32,7 @@ export default {
       alignItems: 'center',
       textAlign: 'center',
       flexWrap: 'wrap',
-      backgroundColor: 'blue',  
+      backgroundColor: '#B58EBB',  
     },
     
     /* Others */
@@ -53,11 +53,11 @@ export default {
       detailTitleWrap:{
         width: '100%',
         height: 180,
-        backgroundColor: 'blue',  
+        backgroundColor: '#B58EBB',  
       },
       detailTitle :{
         width: '100%',
-        backgroundColor: '#0000008f',
+        backgroundColor: '#B58EBB',
         justifyContent: 'center',
         alignItems: 'center',
         textAlign: 'center',

@@ -1,8 +1,6 @@
 import React from 'react'
 import { View, Text, StyleSheet,  Button} from 'react-native'
-import {Ionicons} from 'react-native-vector-icons/Ionicons';
-import { HeaderButtons, Item } from 'react-navigation-header-buttons';
-import { HeaderButton } from '../components/HeaderButton';
+import { MaterialHeaderButtons, Item } from '../components/MyHeaderButtons';
 
 import globalStyles from '../components/globalStyles'
 
@@ -18,7 +16,7 @@ const Screen__MealDetail = props => {
         <View style={{ flexDirection: "row",  justifyContent: 'space-around',
       alignItems: 'center',
       textAlign: 'center',}}>
-   
+
 
       {/* goBack or pop or popToTop para ir al padre*/}
       <Button
@@ -36,12 +34,6 @@ const Screen__MealDetail = props => {
 };
 
 
-// const HeaderButton  = props => {
-//         return <HeaderButton {...props} IconComponent={Ionicons} iconSize={23} color="white" />
-//     }
-
-
-
 Screen__MealDetail.navigationOptions = ({ navigation }) => {
   
  
@@ -49,9 +41,11 @@ Screen__MealDetail.navigationOptions = ({ navigation }) => {
     headerTitle: `${navigation.state.params.itemTitle}`,
     headerBackTitle: 'A much too long text for back button from B to A',
     headerTruncatedBackTitle: `to A`,
-    headerRight: <HeaderButtons HeaderButtonComponent={HeaderButton}>
-    <Item title="fav" iconName="star" onPress={() => alert('fav')} />
-    </HeaderButtons>,
+    headerRight: (
+      <MaterialHeaderButtons>
+        <Item title="add" iconName="md-heart" onPress={() => console.warn('Mark as favorite!')} />
+    </MaterialHeaderButtons>
+    ),
     
     headerStyle: {
         backgroundColor: '#515151'

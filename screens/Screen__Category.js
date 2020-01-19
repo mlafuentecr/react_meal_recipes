@@ -4,6 +4,9 @@ import { CATEGORIES, MEALS} from "../myData/data";
 import globalStyles from "../components/globalStyles";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
+import Icon from 'react-native-vector-icons/Ionicons';
+
+
 const Screen__Category = props => {
 
 //console.log(props);
@@ -55,7 +58,7 @@ const styles = StyleSheet.create({
     margin: "5%",
     minHeight: 110,
     minWidth: "40%",
-    backgroundColor: "white",
+    backgroundColor: globalStyles.secondLight,
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center"
