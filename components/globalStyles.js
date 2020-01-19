@@ -9,6 +9,11 @@ export default {
     btnCancel:'red',
     regularText: '#6c757d',
  
+     /* Font SIzes */
+     font_Size_primary: 14,
+     font_Size_secondary: 14,
+     font_Size_Title: 25,
+     font_Size_icons: 23,
     /* Structure */
     container :{
       flex: 0.9,

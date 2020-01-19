@@ -14,26 +14,29 @@ import ScreenFavorites from "../screens/Screen__favorite";
 import globalStyles from '../components/globalStyles';
 
 
-const NavigatorMealMenu = createStackNavigator({
+const NavigatorMealMenu = createStackNavigator(
+  {
  
- 
-  Categories: {
+    Categories: {
+      screen: ScreenCategory,
+      navigationOptions:{
+        headerStyle: {
+          backgroundColor:
+            Platform.OS === "android" ? globalStyles.macColor : globalStyles.primary
+        },
+        headerTintColor: "#fff",
+        headerTitle: " CategoriesG",
+        headerBackTitle: "A much too long text for back button from B to A",
+        headerTruncatedBackTitle: `to A`,
+      }
+    },
 
-    screen: ScreenCategory,
     
-    navigationOptions:{
-      headerStyle: {
-        backgroundColor:
-          Platform.OS === "android" ? globalStyles.macColor : globalStyles.primary
-      },
-      headerTintColor: "#fff",
-    }
-  },
-  CategoryMeals: {
-    screen: ScreenMeals
-  },
+    CategoryMeals: {
+      screen: ScreenMeals
+    },
 
-  MealDetails: ScreenMealDetail,
+    MealDetails: ScreenMealDetail,
 
 },
 
@@ -44,6 +47,10 @@ const NavigatorMealMenu = createStackNavigator({
     headerStyle: {
       backgroundColor:
         Platform.OS === "android" ? globalStyles.macColor : globalStyles.primary
+    },
+    headerTitleStyle: {
+      fontWeight: 'bold',
+      fontSize: globalStyles.font_Size_Title
     },
     headerTintColor: "#fff",
   }
@@ -59,7 +66,7 @@ const TabStack = createBottomTabNavigator(
     screen: NavigatorMealMenu,
     navigationOptions: {
       title: 'Home',
-      tabBarIcon: () =>  <Icon name="ios-restaurant" size={23} color={globalStyles.primary}  />
+      tabBarIcon: () =>  <Icon name="ios-restaurant" size={globalStyles.font_Size_icons} color={globalStyles.primary}  />
     }
    
 }, 
@@ -67,8 +74,8 @@ const TabStack = createBottomTabNavigator(
   Favorites: {
     screen: ScreenFavorites,
     navigationOptions: {
-      title: 'Home',
-      tabBarIcon: () =>  <Icon name="md-heart" size={23} color={globalStyles.primary}  />
+      title: 'Favorites',
+      tabBarIcon: () =>  <Icon name="md-heart" size={globalStyles.font_Size_icons} color={globalStyles.primary}  />
     }
 
   }
@@ -79,7 +86,8 @@ const TabStack = createBottomTabNavigator(
  tabBarOptions: {
     showIcon: true,
     labelStyle: {
-      fontSize: 18,
+      fontSize: globalStyles.font_Size_primary,
+      color: globalStyles.primary
     }
   }
 

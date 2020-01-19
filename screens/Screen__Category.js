@@ -28,7 +28,7 @@ const Screen__Category = props => {
           });
         }}
       >
-        <View categoryTitle={categoryTitle} >
+        <View style={styles.font_Size_primary} >
           <Text> {categoryTitle} {catId}  </Text>
         </View>
       </TouchableOpacity>
@@ -47,9 +47,9 @@ const Screen__Category = props => {
 };
 
 Screen__Category.navigationOptions = {
-  headerTitle: " Categories",
-  headerBackTitle: "A much too long text for back button from B to A",
-  headerTruncatedBackTitle: `to A`,
+  // headerTitle: " Categories",
+  // headerBackTitle: "A much too long text for back button from B to A",
+  // headerTruncatedBackTitle: `to A`,
 };
 
 const styles = StyleSheet.create({
