@@ -47,9 +47,12 @@ Screen__MealDetail.navigationOptions = ({ navigation }) => {
     </MaterialHeaderButtons>
     ),
     
-    headerStyle: {
-        backgroundColor: '#515151'
-    }}
+    // headerStyle: {
+    //     backgroundColor: 'red',
+    //     color: 'white'
+    // }
+  
+  }
 
   };
 

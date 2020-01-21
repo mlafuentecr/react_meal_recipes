@@ -1,67 +1,43 @@
 import React from "react";
-import { View, Text, StyleSheet, Platform, FlatList } from "react-native";
 import { CATEGORIES, MEALS} from "../myData/data";
 import globalStyles from "../components/globalStyles";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
 import Icon from 'react-native-vector-icons/Ionicons';
 
+import MealList from '../components/MealList';
 
 const Screen__Category = props => {
 
-//console.log(props);
-  
-  const renderGridItem = itemData => {
 
-    const categoryTitle   = itemData.item.title;
-    const catId           = itemData.item.id;
-    const displayMeals    = MEALS.filter( meals => meals.categoryIds.indexOf(catId) >= 0);
-    
-    return (
-      <TouchableOpacity
-      style={styles.gridItem} 
-        onPress={() => {
-          props.navigation.navigate("CategoryMeals", {
-            itemTitle: categoryTitle,
-            catId : catId,
-            displayMeals: displayMeals
-          });
-        }}
-      >
-        <View style={styles.font_Size_primary} >
-          <Text> {categoryTitle} {catId}  </Text>
-        </View>
-      </TouchableOpacity>
-    );
-  };
- 
   //console.log(props);
   return (
-    <FlatList
-      keyExtractor={(item, index) => item.id}
-      data={CATEGORIES}
-      renderItem={renderGridItem}
-      numColumns={2}
-    />
+    <MealList  dataMeals={CATEGORIES}  navigation={props.navigation}/>
   );
 };
 
-Screen__Category.navigationOptions = {
-  // headerTitle: " Categories",
-  // headerBackTitle: "A much too long text for back button from B to A",
-  // headerTruncatedBackTitle: `to A`,
+
+
+
+
+
+
+
+Screen__Category.navigationOptions = () => {
+ 
+  return {
+  headerTitle: `Meal Category`,
+  headerBackTitle: 'A much too long text for back button from B to A',
+  headerTruncatedBackTitle: `to A`,
+
+  
+  headerStyle: {
+      backgroundColor: 'red',
+      color: 'white'
+  }}
+
 };
 
-const styles = StyleSheet.create({
-  gridItem: {
-    flex: 1,
-    margin: "5%",
-    minHeight: 110,
-    minWidth: "40%",
-    backgroundColor: globalStyles.secondLight,
-    justifyContent: "center",
-    alignItems: "center",
-    textAlign: "center"
-  }
-});
+
+
 export default Screen__Category;

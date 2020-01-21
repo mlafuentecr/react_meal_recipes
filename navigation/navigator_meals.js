@@ -13,6 +13,32 @@ import ScreenFavorites from "../screens/Screen__favorite";
 
 import globalStyles from '../components/globalStyles';
 
+const MyNavigationOptions ={
+
+    //  headerTitle: 'xx',
+    headerStyle: {
+      backgroundColor:
+        Platform.OS === "android" ? globalStyles.macColor : globalStyles.primary
+    },
+    headerTitleStyle: {
+      fontWeight: 'bold',
+      fontSize: globalStyles.font_Size_Title
+    },
+
+    headerTintColor: "#fff",
+  navigationOptions: {
+    title: 'Favorites',
+    headerTitle: 'test',
+    headerStyle: {
+      backgroundColor: 'red'
+  },
+    tabBarIcon: ({tintColor}) =>  <Icon name="md-heart" size={globalStyles.font_Size_icons} color={tintColor}  />
+  }
+
+}
+
+
+
 
 const NavigatorMealMenu = createStackNavigator(
   {
@@ -25,7 +51,7 @@ const NavigatorMealMenu = createStackNavigator(
             Platform.OS === "android" ? globalStyles.macColor : globalStyles.primary
         },
         headerTintColor: "#fff",
-        headerTitle: " CategoriesG",
+        //headerTitle: "Navigation meajl js title",
         headerBackTitle: "A much too long text for back button from B to A",
         headerTruncatedBackTitle: `to A`,
       }
@@ -39,56 +65,66 @@ const NavigatorMealMenu = createStackNavigator(
     MealDetails: ScreenMealDetail,
 
 },
-
 {
- 
-  defaultNavigationOptions:{
-    //  headerTitle: 'xx',
-    headerStyle: {
-      backgroundColor:
-        Platform.OS === "android" ? globalStyles.macColor : globalStyles.primary
-    },
-    headerTitleStyle: {
-      fontWeight: 'bold',
-      fontSize: globalStyles.font_Size_Title
-    },
-    headerTintColor: "#fff",
-  }
-  
+  defaultNavigationOptions: MyNavigationOptions
 }
 
 );
 
 
+
+const NavigatorFavorite = createStackNavigator(
+  {
+    Favorites: ScreenFavorites,
+    MealDetails: ScreenMealDetail,
+  },    
+  {
+    defaultNavigationOptions: MyNavigationOptions
+  }
+
+);
+
+
+
+
+
+
+//aca meto los dos menus y los integro
+
 const TabStack = createBottomTabNavigator(
   {
+
+
   Meals:  {
     screen: NavigatorMealMenu,
     navigationOptions: {
-      title: 'Home',
-      tabBarIcon: () =>  <Icon name="ios-restaurant" size={globalStyles.font_Size_icons} color={globalStyles.primary}  />
+      tabBarIcon: ({tintColor}) =>  <Icon name="ios-restaurant" size={globalStyles.font_Size_icons} color={tintColor}  />
     }
    
 }, 
 
   Favorites: {
-    screen: ScreenFavorites,
+    //screen: ScreenFavorites, //aca le digo al navegador que use un screeen 
+    screen: NavigatorFavorite, //aca le digo que use el stackNvigator de arriba
     navigationOptions: {
-      title: 'Favorites',
-      tabBarIcon: () =>  <Icon name="md-heart" size={globalStyles.font_Size_icons} color={globalStyles.primary}  />
+      tabBarIcon: ({tintColor}) =>  <Icon name="ios-restaurant" size={globalStyles.font_Size_icons} color={tintColor}  />
     }
-
   }
-
   
 },{
 
  tabBarOptions: {
     showIcon: true,
+    activeTintColor: globalStyles.primary,
+    inactiveTintColor: 'gray',
+  
     labelStyle: {
       fontSize: globalStyles.font_Size_primary,
-      color: globalStyles.primary
-    }
+      //color: 'red' con este sobre escribo el activeTintColor
+    },
+    style: {
+      //backgroundColor: 'blue',
+    },
   }
 
 }

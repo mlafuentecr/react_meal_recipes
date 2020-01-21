@@ -9,6 +9,21 @@ const Screen__Favorite = props => {
         <Text> Favorite</Text>
     </View>);
 };
+
+
+Screen__Favorite.navigationOptions = ({ navigation }) => {
+  
+ 
+    return {
+    headerTitle: `Favorites`,
+    headerBackTitle: 'A much too long text for back button from B to A',
+    headerTruncatedBackTitle: `to A`,
+ 
+    }
+
+  };
+
+
 const styles = StyleSheet.create({
 
 });
