@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, FlatList } from "react-native";
+import { View, Text, FlatList } from "react-native";
 import { CATEGORIES, MEALS} from "../myData/data";
 import globalStyles from "../components/globalStyles";
 import { TouchableOpacity } from "react-native-gesture-handler";
@@ -17,8 +17,9 @@ const MealList = props => {
     const displayMeals    = MEALS.filter( meals => meals.categoryIds.indexOf(catId) >= 0);
     
     return (
-      <TouchableOpacity
-      style={styles.gridItem} 
+        <View style={globalStyles.mealWrapper } >
+     
+      <TouchableOpacity style={globalStyles.MealItem } 
         onPress={() => {
             props.navigation.navigate("CategoryMeals", {
             itemTitle: categoryTitle,
@@ -27,37 +28,33 @@ const MealList = props => {
           });
         }}
       >
-        <View style={styles.font_Size_primary} >
-          <Text> {categoryTitle} {catId}  </Text>
-        </View>
+      
+            <View style={globalStyles.font_Size_primary} >
+            <Text> {categoryTitle} {catId}  </Text>
+            </View>
+       
       </TouchableOpacity>
+      
+      </View>
     );
   };
  
-  //console.log(props);
+  //console.log(props); 
   return (
+//para flat list no se usa style se usa contentContainerStyle
     <FlatList
+      contentContainerStyle={globalStyles.flatlist}
       keyExtractor={(item, index) => item.id}
       data={props.dataMeals}
       renderItem={renderGridItem}
       numColumns={2}
     />
+   
   );
 };
 
 
 
-const styles = StyleSheet.create({
-  gridItem: {
-    flex: 1,
-    margin: "5%",
-    minHeight: 110,
-    minWidth: "40%",
-    backgroundColor: globalStyles.secondLight,
-    justifyContent: "center",
-    alignItems: "center",
-    textAlign: "center"
-  }
-});
+
 export default MealList;
 

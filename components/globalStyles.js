@@ -51,14 +51,37 @@ export default {
       mealRow:{
         width: '100%',
       },
-      mealWrapper :{
-        width: '100%',
-       
+      flatlist: {
+        alignItems: 'stretch',
+        backgroundColor: 'gray',
       },
+    
+
+      mealWrapper:{
+        flex:0.5, 
+        backgroundColor: 'purple', 
+        alignItems: 'center',
+        textAlign: 'center',
+        justifyContent: 'center',
+        height:200,
+        margin: 5
+      },
+
+       MealItem: {
+        flex:1,
+        minWidth: '100%',
+        alignItems: 'center',
+        textAlign: 'center',
+        justifyContent: 'center',
+        backgroundColor: 'white',
+        padding: 20,
+      },
+     
+   
       detailTitleWrap:{
         width: '100%',
         height: 180,
-        backgroundColor: '#B58EBB',  
+        backgroundColor: 'purple',  
       },
       detailTitle :{
         width: '100%',
@@ -67,7 +90,7 @@ export default {
         alignItems: 'center',
         textAlign: 'center',
         color: 'white',
-       padding: 5
+       
       },
       details:{
         flexWrap: 'wrap',
@@ -77,6 +100,6 @@ export default {
       detailImg:{
         height: '100%',
         width: '100%',
-       },
+       }
  
   }  

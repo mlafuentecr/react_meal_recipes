@@ -1,26 +1,17 @@
 import React from "react";
-import { CATEGORIES, MEALS} from "../myData/data";
-import globalStyles from "../components/globalStyles";
-import { TouchableOpacity } from "react-native-gesture-handler";
-
-import Icon from 'react-native-vector-icons/Ionicons';
-
+import { CATEGORIES} from "../myData/data";
 import MealList from '../components/MealList';
 
+
 const Screen__Category = props => {
-
-
-  //console.log(props);
   return (
-    <MealList  dataMeals={CATEGORIES}  navigation={props.navigation}/>
+  
+      <MealList 
+      dataMeals={CATEGORIES}  
+      navigation={props.navigation} />
+ 
   );
 };
-
-
-
-
-
-
 
 
 Screen__Category.navigationOptions = () => {

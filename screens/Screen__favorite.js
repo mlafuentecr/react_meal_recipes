@@ -1,30 +1,35 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { MEALS} from "../myData/data";
+import MealList from '../components/MealList';
 
-import globalStyles from '../components/globalStyles'
+
 
 const Screen__Favorite = props => {
+    const favData = MEALS.filter( meals => meals.id === 'm1' || meals.id === 'm2');
     return (
-    <View style={styles.categoryWrapper}>
-        <Text> Favorite</Text>
-    </View>);
-};
+      <MealList  
+      dataMeals={favData}  
+      navigation={props.navigation} />
+    );
+  };
+  
 
-
-Screen__Favorite.navigationOptions = ({ navigation }) => {
+Screen__Favorite.navigationOptions = () => {
   
  
     return {
-    headerTitle: `Favorites`,
-    headerBackTitle: 'A much too long text for back button from B to A',
-    headerTruncatedBackTitle: `to A`,
- 
+        headerTitle: `Favorites`,
+        headerBackTitle: 'A much too long text for back button from B to A',
+        headerTruncatedBackTitle: `to A`,
+      
+        
+        // headerStyle: {
+        //     backgroundColor: 'red',
+        //     color: 'white'
+        // }
     }
+      
+      };
 
-  };
 
-
-const styles = StyleSheet.create({
-
-});
 export default Screen__Favorite;
