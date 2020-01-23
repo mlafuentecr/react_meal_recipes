@@ -1,22 +1,26 @@
 import React from 'react'
-import { View, Text, StyleSheet,  Button} from 'react-native'
-import { MaterialHeaderButtons, Item } from '../components/MyHeaderButtons';
+import { View, Text, Image, StyleSheet,  Button} from 'react-native'
+import { MyHeaderButtons, Item } from '../components/MyHeaderButtons';
 
 import globalStyles from '../components/globalStyles'
+import { ScrollView } from 'react-native';
 
 
 const Screen__MealDetail = props => { 
     const headerTitle = props.navigation.state.params.itemTitle;
-     //console.log(headerTitle);
+    const imageUrl = props.navigation.state.params.imageUrl;
+
+     console.log(imageUrl);
 
     return (
+      <ScrollView>
     <View style={globalStyles.categoryWrapper}>
-        <Text> detail Meal {headerTitle}</Text>
+       
 
-        <View style={{ flexDirection: "row",  justifyContent: 'space-around',
-      alignItems: 'center',
-      textAlign: 'center',}}>
-
+        <View>
+         <Text> detail Meal {headerTitle}</Text>
+        
+        </View>
 
       {/* goBack or pop or popToTop para ir al padre*/}
       <Button
@@ -26,9 +30,10 @@ const Screen__MealDetail = props => {
           props.navigation.goBack();
         }}
       />
-    </View>
+   
 
-    </View>);
+    </View>
+    </ScrollView>);
 
     
 };
@@ -42,9 +47,9 @@ Screen__MealDetail.navigationOptions = ({ navigation }) => {
     headerBackTitle: 'A much too long text for back button from B to A',
     headerTruncatedBackTitle: `to A`,
     headerRight: (
-      <MaterialHeaderButtons>
+      <MyHeaderButtons>
         <Item title="add" iconName="md-heart" onPress={() => console.warn('Mark as favorite!')} />
-    </MaterialHeaderButtons>
+    </MyHeaderButtons>
     ),
     
     // headerStyle: {

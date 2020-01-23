@@ -5,14 +5,14 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 
 // define IconComponent, color, sizes and OverflowIcon in one place
-const MaterialHeaderButton = props => (
+const myButton = props => (
   <HeaderButton {...props} IconComponent={Icon} iconSize={23} color="white" />
 );
 
-export const MaterialHeaderButtons = props => {
+export const MyHeaderButtons = props => {
   return (
     <HeaderButtons
-      HeaderButtonComponent={MaterialHeaderButton}
+      HeaderButtonComponent={myButton}
       OverflowIcon={<Icon name="ios-add" size={23} color="white" />}
       {...props}
     />

@@ -97,11 +97,11 @@ const Screen__CategoryMeals = props => {
 Screen__CategoryMeals.navigationOptions = ({ navigation }) => {
   //el segundo parametro es si no encuentra el primero
  
-  console.log(navigation);
+  //console.log(navigation);
 
   const choosenTitle      = navigation.state.params.itemTitle;
   const titleCat          = navigation.state.params.itemTitle;
-  console.log(choosenTitle+'  '+titleCat);
+  //console.log(choosenTitle+'  '+titleCat);
 
 
   return {
