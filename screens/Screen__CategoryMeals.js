@@ -7,34 +7,42 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 const Screen__CategoryMeals = props => {
  
 //console.log(props);
-  //console.log( displayMeals);
+  console.log('cat '+ props.navigation.getParam('catId'));
  
 
   const titleCat        = props.navigation.state.params.itemTitle;
-  const displayMeals    = props.navigation.state.params.displayMeals;
-  const catId           = props.navigation.state.params.id;
+  const displayMeals    =props.navigation.getParam('displayMeals');
+  const catId           = props.navigation.getParam('catId');
   
-  _mealSelect=()=>{
-   props.navigation.navigate({routeName: "MealDetails", params:{
-    itemTitle: titleCat,
-    catId : catId,
-    displayMeals: displayMeals
-  }});
-  }
+  // _mealSelect=()=>{
+  //  props.navigation.navigate({routeName: "MealDetails", params:{
+  //   itemTitle: titleCat,
+  //   catId : catId,
+  //   uri:  imageUrl,
+  //   displayMeals: displayMeals
+  // }});
+  // }
 
 
   const remderMealItem = itemData => {
+  
     return(  
       
       <View style={globalStyles.mealRow} >
+        
         <TouchableOpacity  onPress={() => {
           props.navigation.navigate("MealDetails", {
-          itemTitle: itemData.item.title,
-          catId : catId,
-          displayMeals: displayMeals
+          itemTitlex: itemData.item.title,
+          catId: itemData.item.categoryIds,
+          idx: itemData.item.id,
+          imageUrlx: itemData.item.imageUrl,
+          duration: itemData.item.duration,
+          complexity: itemData.item.complexity,
+          affordability: itemData.item.affordability,
+          ingredients: itemData.item.ingredients
           });
         }}
-        style={globalStyles.mealWrapper} >
+        style={globalStyles.mealWrapperDetail} >
 
           <View style={globalStyles.detailTitleWrap}>
             <ImageBackground source={{uri: itemData.item.imageUrl}}  style={globalStyles.detailImg} >
@@ -47,6 +55,7 @@ const Screen__CategoryMeals = props => {
             <Text style={globalStyles.p5}> {itemData.item.complexity}</Text>
             <Text style={globalStyles.p5}> {itemData.item.affordability} </Text>
           </View>
+
         </TouchableOpacity>
     </View>
    
@@ -75,8 +84,7 @@ const Screen__CategoryMeals = props => {
         onPress={() => {
           //Also I can use navigate or push
           // puede cargar la misma pagina
-          props.navigation.push("MealDetails", {
-            itemTitle : titleCat,
+          props.navigation.push("MealDetails", {//itemTitle : titleCat,
           });
         }}
       />

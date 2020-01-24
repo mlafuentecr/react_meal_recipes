@@ -66,7 +66,15 @@ export default {
         height:200,
         margin: 5
       },
-
+      mealWrapperDetail:{
+        flex:0.5, 
+        backgroundColor: '#cccccc', 
+        alignItems: 'center',
+        textAlign: 'center',
+        justifyContent: 'center',
+        marginBottom: 10,
+        fontSize: 30,
+      },
        MealItem: {
         flex:1,
         minWidth: '100%',
@@ -80,26 +88,43 @@ export default {
    
       detailTitleWrap:{
         width: '100%',
-        height: 180,
+        height: 200,
         backgroundColor: 'purple',  
+        marginTop: 5,
+        marginBottom: 5,
       },
       detailTitle :{
         width: '100%',
-        backgroundColor: '#B58EBB',
+        backgroundColor: 'black',
         justifyContent: 'center',
         alignItems: 'center',
         textAlign: 'center',
         color: 'white',
-       
+        fontSize: 20,
       },
       details:{
         flexWrap: 'wrap',
        justifyContent: 'space-evenly',
       flexDirection: 'row',
+     
       },
       detailImg:{
         height: '100%',
         width: '100%',
+       },
+       detailListWrapper:{
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        width: '80%',
+        backgroundColor: 'white'
+
+       },
+
+       detailList:{
+        width: '100%',
+        backgroundColor: 'gray',
+        fontSize: 22,
+        marginTop: 15,
        }
  
   }  
