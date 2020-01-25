@@ -56,7 +56,7 @@ export default {
         backgroundColor: 'gray',
       },
     
-
+ /* Detail */
       mealWrapper:{
         flex:0.5, 
         backgroundColor: 'purple', 
@@ -122,9 +122,12 @@ export default {
 
        detailList:{
         width: '100%',
-        backgroundColor: 'gray',
         fontSize: 22,
-        marginTop: 15,
+        marginVertical: 10,
+        marginHorizontal: 10,
+        borderColor: '#ccc',
+        borderWidth: 1,
+        padding: 1,
        }
  
   }  

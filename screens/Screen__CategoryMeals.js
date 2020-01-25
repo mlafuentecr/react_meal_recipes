@@ -39,7 +39,8 @@ const Screen__CategoryMeals = props => {
           duration: itemData.item.duration,
           complexity: itemData.item.complexity,
           affordability: itemData.item.affordability,
-          ingredients: itemData.item.ingredients
+          ingredients: itemData.item.ingredients,
+          steps: itemData.item.steps,
           });
         }}
         style={globalStyles.mealWrapperDetail} >

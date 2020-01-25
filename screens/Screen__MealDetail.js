@@ -12,9 +12,10 @@ const Screen__MealDetail = props => {
     const duration      = props.navigation.getParam('duration');
     const complexity    = props.navigation.getParam('complexity');
     const affordability = props.navigation.getParam('affordability');
-    const ingredients = props.navigation.getParam('ingredients');
+    const ingredients   = props.navigation.getParam('ingredients');
+    const steps       = props.navigation.getParam('steps');
   
-     console.log(props.navigation);
+    // console.log(props.navigation);
 
     return (
       <ScrollView>
@@ -33,13 +34,15 @@ const Screen__MealDetail = props => {
           </View>
 
           <View style={globalStyles.details}>
-          <Text style={globalStyles.detailTitle}> Details </Text>
-          <Text style={globalStyles.detailListWrapper}> 
-            {ingredients.map(Item => (
-              <Text style={globalStyles.detailList} key={Item}> { Item }</Text>
-            ))}
-          </Text>
-            <Text style={globalStyles.p5}> {ingredients} </Text>
+            <Text style={globalStyles.detailTitle}> Details </Text>
+            <Text style={globalStyles.detailListWrapper}> 
+              {ingredients.map(Item => (
+                <Text style={globalStyles.detailList} key={Item}> { Item }</Text>
+              ))}
+            </Text>
+
+            <Text style={globalStyles.detailTitle}> Steps </Text>
+            <Text style={globalStyles.p5}> { steps } </Text>
           </View>
 
       {/* goBack or pop or popToTop para ir al padre*/}
