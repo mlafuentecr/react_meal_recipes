@@ -23,7 +23,6 @@ Screen__Category.navigationOptions = () => {
 
   
   headerStyle: {
-      backgroundColor: 'red',
       color: 'white'
   }}
 

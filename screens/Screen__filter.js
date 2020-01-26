@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View,  } from 'react-native'
 
 import FilterItem from '../components/filterItem'
 import globalStyles from '../components/globalStyles'
@@ -8,15 +8,12 @@ import globalStyles from '../components/globalStyles'
 
 
 
-//Para Switch hay que manejar el estado si el cliente
-//dice true o false entonces hay que manejarlo con useState
 const Screen__Filter = props => {
-    const [isGlutenFree, setIsGlutenFree] = useState(false);
-    const [isLactoseFree, setIsLactoseFree] = useState(false);
-    const [isVegan, setIsVegan] = useState(false);
-    const [isVegetarian, setIsVegetarian] = useState(false);
 
-    
+    const [isGlutenFree, setIsGlutenFree]   = useState(false);
+    const [isLactoseFree, setIsLactoseFree] = useState(false);
+    const [isVegan, setIsVegan]             = useState(false);
+    const [isVegetarian, setIsVegetarian]   = useState(false);
 
     return (
         <View style={globalStyles.filterWrapper}>
@@ -24,35 +21,30 @@ const Screen__Filter = props => {
         <FilterItem
         label={'Gluten Free'}
          swithState={isGlutenFree}
-         onChange={newValue => setIsGlutenFree(newValue)} />
+         onChange={newValue1 => setIsGlutenFree(newValue1)} />
 
 
                <FilterItem
         label={'Lactose Free'}
          swithState={isLactoseFree}
-         onChange={newValue => setIsLactoseFree(newValue)} />
+         onChange={newValue2 => setIsLactoseFree(newValue2)} />
 
 
                  <FilterItem
         label={'Vegan'}
          swithState={isVegan}
-         onChange={newValue => setIsVegan(newValue)} />
+         onChange={newValue3 => setIsVegan(newValue3)} />
 
 
 <FilterItem
         label={'Vegetarian'}
          swithState={isVegetarian}
-         onChange={newValue => setIsVegetarian(newValue)} />
+         onChange={newValue4 => setIsVegetarian(newValue4)} />
 
     </View>);
 };
 
 
-
-// Screen__Filter.navigationOptions = {
-//     headerTitle: `Filter Meals`,
-//   };
-  
 Screen__Filter.navigationOptions = () => {
   
  
