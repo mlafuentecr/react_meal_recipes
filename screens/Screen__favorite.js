@@ -14,22 +14,19 @@ const Screen__Favorite = props => {
   };
   
 
-Screen__Favorite.navigationOptions = () => {
+  {
+
+// Screen__Favorite.navigationOptions = () => {
   
  
-    return {
-        headerTitle: `Favorites`,
-        headerBackTitle: 'A much too long text for back button from B to A',
-        headerTruncatedBackTitle: `to A`,
+//     return {
+//         headerTitle: `Favorites`,
+//         headerBackTitle: 'A much too long text for back button from B to A',
+//         headerTruncatedBackTitle: `to A`,
+     
+//     }
       
-        
-        // headerStyle: {
-        //     backgroundColor: 'red',
-        //     color: 'white'
-        // }
-    }
-      
-      };
-
+//       };
+}
 
 export default Screen__Favorite;

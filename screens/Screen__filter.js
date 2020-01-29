@@ -44,19 +44,20 @@ const Screen__Filter = props => {
     </View>);
 };
 
-
-Screen__Filter.navigationOptions = () => {
+{
+// Screen__Filter.navigationOptions = () => {
   
  
-    return {
-        headerTitle: `Filters`,
-        headerBackTitle: 'A much too long text for back button from B to A',
-        headerTruncatedBackTitle: `to A`,
+//     return {
+       
+//         headerTitle: `Filters`,
+//         headerBackTitle: 'A much too long text for back button from B to A',
+//         headerTruncatedBackTitle: `to A`,
  
-    }
+//     }
       
-      };
-
+//       };
+}
 
 
 export default Screen__Filter;
